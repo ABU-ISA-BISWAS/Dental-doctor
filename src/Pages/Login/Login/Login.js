@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import './Login.css';
@@ -13,6 +13,8 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
+
+      const [signInWithGoogle] = useSignInWithGoogle(auth);
     const emailRef = useRef({});
 
     const passwordlRef = useRef({});
@@ -27,6 +29,8 @@ const Login = () => {
     if(user){
         navigate(from, { replace: true });
     }
+
+    
 
     const navigateRegister =event=>{
         navigate('/register');
@@ -50,12 +54,15 @@ const Login = () => {
   <Form.Group className="mb-3" controlId="formBasicCheckbox">
     <Form.Check type="checkbox" label="Check me out" />
   </Form.Group>
+  
   <Button variant="primary" type="submit">
     Submit
   </Button>
   
 </Form>
+<p className='text-danger'>{error}</p>
     <p> New to Dental ? <span className='please-register text-danger' onClick={navigateRegister}>Please Register</span></p>
+    <button onClick={() => signInWithGoogle()}>SignIn with google</button>
         </div>
     );
 };
