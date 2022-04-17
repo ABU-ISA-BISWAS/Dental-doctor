@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "name": "Dental Filling for Cavities",
+        "price": "300",
+        "description": "To treat a cavity your dentist will remove the decayed portion of the tooth and then fill the area on the tooth where the decayed material was removed.",
+        "img": "https://i.ibb.co/yfdVRhx/Dental-Filling-for-Cavities.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Regular Dental Cleaning",
+        "price": "100",
+        "description": "Regular teeth cleanings are totally non-invasive, and are the cornerstone of preventive dentistry. It's usually best to have your teeth cleaned every six months.",
+        "img": "https://i.ibb.co/KXHxRQD/Regular-Dental-Cleaning.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Tingling Sensation Pulpit",
+        "price": "150",
+        "description": "Pulpit, often referred to as a toothache, is an inflammation of the dental pulp — the connective tissues and cells in the center of your teeth.",
+        "img": "https://i.ibb.co/WGW0y5z/Tingling-Sensation-Pulpitis.jpg"
+    }
+    
+]
