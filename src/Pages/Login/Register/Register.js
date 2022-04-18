@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Register.css';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import {  useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth';
+import { useSendEmailVerification } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import { sendEmailVerification } from 'firebase/auth';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Register = () => {
 
@@ -11,8 +16,15 @@ const Register = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
-
+      ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
+      
+      
+      const SendEmailVerification = () => {
+        const [email, setEmail] = useState('');
+        const [sendEmailVerification, sending, error] = useSendEmailVerification(
+          auth
+        );}
+        
     const navigate= useNavigate();
 
     const navigateLogin =event=>{
@@ -25,6 +37,8 @@ const Register = () => {
         const password =event.target.password.value;
 
         createUserWithEmailAndPassword(email,password);
+        sendEmailVerification();
+        toast('Sent verification email');
        
     }
     if(user){
@@ -40,7 +54,11 @@ const Register = () => {
                 <input type="password" name='password' placeholder='password' />
                 <input type="submit" value="Register" />
             </form>
+            
+        
+     
             <p className='text-center'>Already have an account ? <span className='please-register text-danger' onClick={navigateLogin}>Please Login</span></p>
+            <ToastContainer/>
         </div>
     );
 };

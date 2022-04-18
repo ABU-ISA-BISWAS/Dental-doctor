@@ -1,9 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle,useSendPasswordResetEmail, useAuthState } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import './Login.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
@@ -13,6 +15,7 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
+     
 
       const [signInWithGoogle] = useSignInWithGoogle(auth);
     const emailRef = useRef({});
@@ -30,10 +33,17 @@ const Login = () => {
         navigate(from, { replace: true });
     }
 
-    
+ 
 
     const navigateRegister =event=>{
         navigate('/register');
+    }
+    const [sendPasswordResetEmail, sending, sendPasserror] = useSendPasswordResetEmail(auth);
+    const  handleSetPasswordReset =()=>{
+      const email =emailRef.current.value;
+      
+      sendPasswordResetEmail(email);
+      toast('Sent email');
     }
     return (
         <div className='container w-50 mx-auto'>
@@ -51,18 +61,29 @@ const Login = () => {
     <Form.Label>Password</Form.Label>
     <Form.Control ref={passwordlRef} type="password" placeholder="Password" required />
   </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
+  
   
   <Button variant="primary" type="submit">
     Submit
   </Button>
   
 </Form>
-<p className='text-danger'>{error}</p>
+  {
+    error ? 
+    <p className='text-danger mt-2'>The email or password  that you've entered is incorrect!!!</p>
+    :
+    <> </>
+  }
+
     <p> New to Dental ? <span className='please-register text-danger' onClick={navigateRegister}>Please Register</span></p>
     <button onClick={() => signInWithGoogle()}>SignIn with google</button>
+
+    <button
+        onClick={handleSetPasswordReset}
+      >
+        Reset password
+      </button>
+      <ToastContainer/>
         </div>
     );
 };
