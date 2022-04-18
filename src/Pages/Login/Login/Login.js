@@ -43,7 +43,7 @@ const Login = () => {
       const email =emailRef.current.value;
       
       sendPasswordResetEmail(email);
-      toast('Sent email');
+      toast('Sent reset password link');
     }
     return (
         <div className='container w-50 mx-auto'>

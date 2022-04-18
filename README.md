@@ -1,3 +1,20 @@
+## Dental Doctor
+Site link [Dental Doctor](https://github.com/facebook/create-react-app)
+
+◉ dental services
+◉ Email password login
+◉ Google signIn
+◉ password reset option
+◉ blogs
+◉ about me
+◉ checkout page for loged in user
+
+# Technology used:
+◉ React Js
+◉ Bootstrap
+◉ Html
+◉ CSS
+◉ Firebase
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
