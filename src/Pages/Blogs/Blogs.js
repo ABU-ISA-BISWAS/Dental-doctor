@@ -1,9 +1,10 @@
 import React from 'react';
+import './Blogs.css';
 
 const Blogs = () => {
     return (
-        <div>
-            <h2> Difference between authorization and authentication?</h2>
+        <div className='blogs'>
+            <h2 className=''> Difference between authorization and authentication?</h2>
             <p>Authentication is the process of verifying who someone is, whereas authorization is the process of verifying what specific applications, files, and data a user has access.Authentication verifies who the user is.Authorization determines what resources a user can access.</p>
             <h2>Why are you using firebase? What other options do you have to implement authentication?</h2>
             <p>The Firebase Realtime Database lets you build rich, collaborative applications by allowing secure access to the database directly from client-side code. Data is persisted locally, and even while offline, realtime events continue to fire, giving the end user a responsive experience.

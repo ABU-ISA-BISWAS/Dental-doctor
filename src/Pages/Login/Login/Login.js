@@ -47,7 +47,7 @@ const Login = () => {
     }
     return (
         <div className='container w-50 mx-auto'>
-           <h2 className='text-primary text-center mt-4'>please login</h2> 
+           <h2 className='text-primary text-center mt-4'>Please Login</h2> 
            <Form onSubmit={handleSubmit}>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
@@ -64,7 +64,7 @@ const Login = () => {
   
   
   <Button variant="primary" type="submit">
-    Submit
+    Login
   </Button>
   
 </Form>
@@ -75,14 +75,13 @@ const Login = () => {
     <> </>
   }
 
-    <p> New to Dental ? <span className='please-register text-danger' onClick={navigateRegister}>Please Register</span></p>
-    <button onClick={() => signInWithGoogle()}>SignIn with google</button>
+    <p className='mt-2'> New to Dental ? <span className='please-register text-danger ' onClick={navigateRegister}>Please Register</span></p>
+    <p> Forgot Password ? <span className='please-register text-danger' onClick={handleSetPasswordReset}>Reset password</span></p>
 
-    <button
-        onClick={handleSetPasswordReset}
-      >
-        Reset password
-      </button>
+    
+    <button className='google-signin' onClick={() => signInWithGoogle()}>SignIn with google</button>
+
+    
       <ToastContainer/>
         </div>
     );

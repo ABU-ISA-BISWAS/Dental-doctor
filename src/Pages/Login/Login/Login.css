@@ -1,3 +1,8 @@
 .please-register{
     cursor: pointer;
 }
+.google-signin{
+    color: rgb(231, 132, 96);
+    background-color: rgb(37, 35, 35);
+    border-radius: 5px;
+}
