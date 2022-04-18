@@ -19,8 +19,10 @@ const Banner = () => {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3 className='text-primary fw-bolder'>Make your <span className='text-danger fs-2'>Dental</span> Experience a Lot Brighter</h3>
+            <p className='text-danger fw-bold'>
+            With best facilities and better equipments,you are in safe hands.
+            </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -31,8 +33,8 @@ const Banner = () => {
           />
   
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3 className='text-primary fw-bolder '>From Simple Procedures to complex Surgeries</h3>
+            <p className='text-danger fw-bold'>With best facilities and better equipments,you are in safe hands.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -43,10 +45,10 @@ const Banner = () => {
           />
   
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
+            
+            <h3 className='text-primary fw-bolder'>Expertise in major dental procedures</h3>
+            <p className='text-danger fw-bold'>Oral Examinations,Root Canals,Crowns and Caps</p>
+
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

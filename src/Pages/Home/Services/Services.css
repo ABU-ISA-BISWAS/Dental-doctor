@@ -1,11 +1,12 @@
 .services-container{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 10px;
+    grid-gap: 20px;
+    padding: 40px;
 }
 .services-title{
     text-align: center;
-    color: blue;
+    color: rgba(24, 93, 196, 0.842);
 }
 
 @media only screen and (max-width:576px){

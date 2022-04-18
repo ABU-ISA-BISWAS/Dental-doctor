@@ -1,0 +1,19 @@
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.about img{
+    height: 450px;
+    width: 350px;
+    border-radius: 20px;
+}
+.about h2{
+    margin-left: 40px;
+    font-size: 60px;
+}
+.about p{
+    margin-left: 40px;
+    font-size: 20px;
+}
